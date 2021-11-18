@@ -15,7 +15,7 @@ data = pd.read_csv('scan.csv')
 df = pd.DataFrame(data, columns = ['Host','Protocol','Port','Name'])
 
 # select only the names with HTTP
-dataSubset = df[df['Name'].str.match('(HTTP)')]
+dataSubset = df[df['Name'].str.contains('(HTTP)')]
 # show all records
 pd.set_option('display.max_rows', None)
 # console out host and port
